@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gym App</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container-fluid text-center">
+    <h1>Welcome to the Gym App</h1><br><br>
+    <div class="row d-flex justify-content-around">
+        <div class="col p-3">
+            <img src="https://starmarkfitnessstudio.com/wp-content/uploads/2020/11/Featured-Image-min.jpg"
+                 alt="Gym Users" style="width:400px;height:250px;"><br>
+            <a  style="text-decoration: none" class="h2" th:href="@{/users}">Manage Users</a><br>
+        </div>
+        <div class="col p-3">
+            <img src="https://media.istockphoto.com/id/1078991800/photo/woman-and-personal-trainer-making-exercise-plan-in-gym.jpg?s=612x612&w=0&k=20&c=bp506Di4PfLCJQ1_pJ4nclwYngGg-RKi9NQuk1x5Se8="
+                 alt="Gym Trainers" style="width:380px;height:250px;"><br>
+            <a style="text-decoration: none" class="h2" th:href="@{/instructors}">Manage Instructors</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

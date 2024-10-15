@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Instructors</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div style="margin: 20px;">
+    <a class="btn btn-dark btn-lg" th:href="@{/}">Home</a>
+</div>
+<div class="container-fluid text-center">
+    <div><h1>Instructors</h1></div><br>
+    <div class="m-2">
+        <a class="h4" th:href="@{/instructors/new}">Add New Instructor</a>
+    </div>
+
+    <div th:if="${message2}" class="alert alert-success text-center">
+        [[${message2}]]
+    </div>
+
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Mobile</th>
+                <th>Address</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <th:block th:each="instructor: ${listInstructors}">
+                <tr>
+                    <td>[[${instructor.id}]]</td>
+                    <td>[[${instructor.name}]]</td>
+                    <td>[[${instructor.email}]]</td>
+                    <td>[[${instructor.mobile}]]</td>
+                    <td>[[${instructor.address}]]</td>
+                    <td>
+                        <a class="btn btn-primary" th:href="@{'/instructors/edit/'+${instructor.id}}">Edit</a>
+                        <a class="btn btn-danger" th:href="@{'/instructors/delete/'+${instructor.id}}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
